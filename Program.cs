@@ -1,26 +1,19 @@
 ﻿using ConsoleApp1;
-//// Estacionamento com: 1 vaga grande, 1 média e 0 pequenas
-//Estacionamento shopping = new Estacionamento(1, 1, 0);
-int contadorVip = 0;
-List<Pessoa> convidados = new List<Pessoa>();
-convidados.Add(new Pessoa("Ana", 34));
-convidados.Add(new Pessoa("João", 30));
-convidados.Add(new Pessoa("Bruno", 30));
-foreach(Pessoa p in convidados)
+using System.ComponentModel;
+Estacionamento shopping = new Estacionamento(1, 1, 0);
+Console.WriteLine("Insira o tipo do carro: 1 para carro grande, 2 para médio e 3 para pequeno");
+while (true)
 {
-    if(p.idade >= 30)
+    string entrada = (Console.ReadLine());
+    if (int.TryParse(entrada, out int tipoCarro))
     {
-        p.Apresentar();
-        Console.WriteLine($"{p.nome} é um convidado VIP!");
-        contadorVip = contadorVip + 1;
+        if (tipoCarro == 0) break;
+        Console.WriteLine(shopping.AdicionarCarro(tipoCarro));
     }
     else
     {
-        p.Apresentar();
+        Console.WriteLine("Entrada inválida! Digite um número.");
     }
+
+
 }
-Console.WriteLine($"A quantida de VIPS na festa foram: {contadorVip}");
-//Console.WriteLine(shopping.AdicionarCarro(1)); // Esperado: True (estacionou o grande)
-//Console.WriteLine(shopping.AdicionarCarro(1)); // Esperado: False (vaga grande acabou)
-//Console.WriteLine(shopping.AdicionarCarro(3)); // Esperado: False (vaga pequena já nasceu em 0)
-//Console.WriteLine(shopping.AdicionarCarro(2)); // Esperado: True (estacionou o médio)

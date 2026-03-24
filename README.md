@@ -13,5 +13,5 @@ Lógica de Estados: Controle de incremento e decremento de vagas disponíveis.
 
 Coleções: Uso de List<T> e laços foreach para processar múltiplos dados.
 
-🚀 Como funciona:
+🚀 Ele funciona da seguinte forma:
 O sistema recebe a quantidade inicial de vagas para carros Grandes, Médios e Pequenos. Ao tentar adicionar um carro, o programa verifica se há disponibilidade e retorna o sucesso ou falha da operação.
